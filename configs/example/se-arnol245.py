@@ -173,7 +173,7 @@ mp0_path = multiprocesses[0].executable
 
 options = MyOptions()
 
-system = System(cpu = options,# [CPUClass(cpu_id=i) for i in range(np)],
+system = System(cpu = MyMinorCPU(options),# [CPUClass(cpu_id=i) for i in range(np)],
                 mem_mode = test_mem_mode,
                 mem_ranges = [AddrRange(args.mem_size)],
                 cache_line_size = args.cacheline_size)
