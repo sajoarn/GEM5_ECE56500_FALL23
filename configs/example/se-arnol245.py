@@ -64,7 +64,7 @@ from common.FileSystemConfig import config_filesystem
 from common.Caches import *
 from common.cpu2000 import *
 
-import MyMinorCPU
+import CustomCPU
 
 class MyOptions:
     fpu_operation_latency = 6
@@ -173,7 +173,7 @@ mp0_path = multiprocesses[0].executable
 
 options = MyOptions()
 
-system = System(cpu = MyMinorCPU(options),# [CPUClass(cpu_id=i) for i in range(np)],
+system = System(cpu = CustomCPU(options),# [CPUClass(cpu_id=i) for i in range(np)],
                 mem_mode = test_mem_mode,
                 mem_ranges = [AddrRange(args.mem_size)],
                 cache_line_size = args.cacheline_size)
